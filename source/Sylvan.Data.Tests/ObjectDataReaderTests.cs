@@ -83,7 +83,7 @@ public class ObjectDataReaderTests
 			var id = dr.GetInt32(1);
 			var date = dr.GetDateTime(2);
 			var g = dr.GetGuid(3);
-			if (!dr.IsDBNull(4))
+			if (!await dr.IsDBNullAsync(4))
 			{
 				dr.GetInt32(4);
 			}

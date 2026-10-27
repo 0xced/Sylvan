@@ -63,7 +63,7 @@ public class JsonDataWriterTests
 		Assert.Equal(10, count);
 		ms.Seek(0, SeekOrigin.Begin);
 		var r = new StreamReader(ms);
-		var jsonStr = r.ReadToEnd();
+		var jsonStr = await r.ReadToEndAsync();
 	}
 
 	static JsonDocument GetDocument(DbDataReader data)
