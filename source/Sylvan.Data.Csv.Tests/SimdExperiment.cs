@@ -1,6 +1,7 @@
 ﻿#if NET6_0_OR_GREATER
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 using Xunit;
@@ -11,7 +12,8 @@ public unsafe class SimdExperiment
 {
 	private sealed class SkipIfSse2UnsupportedFactAttribute : FactAttribute
 	{
-		public SkipIfSse2UnsupportedFactAttribute()
+		public SkipIfSse2UnsupportedFactAttribute([CallerFilePath] string sourceFilePath = null, [CallerLineNumber] int sourceLineNumber = -1)
+			: base(sourceFilePath, sourceLineNumber)
 		{
 			if (!Sse2.IsSupported)
 			{
