@@ -49,7 +49,7 @@
 	</ItemGroup>
 
 	<PropertyGroup Condition="$(IsTestProject) == true">
-		<NoWarn>xunit2013;CA2007;CA1849;xUnit1051</NoWarn>
+		<NoWarn>CA1849;xUnit1051</NoWarn>
 	</PropertyGroup>
 
 
